@@ -1,36 +1,47 @@
 import React from 'react';
-import { Rocket } from 'lucide-react';
+import { Target } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const Mission = () => {
     return (
-        <div className="py-24 md:py-48 relative">
-            <div className="container mx-auto px-8 flex gap-8 md:gap-16 flex-col md:flex-row justify-end items-center">
-                <div className="w-full order-2 md:order-1 md:w-1/2 flex flex-col lg:flex-row items-center gap-4">
-                    <div className="w-full animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
-                        <div className="glass-morphism space-y-3 cursor-pointer h-[200px] lg:h-[400px] rounded-3xl relative overflow-hidden">
-                            <img
-                                alt="price chart"
-                                className="absolute h-full w-full left-0 top-0 right-0 bottom-0 object-contain object-center"
-                                src="/graph.svg"
-                            />
-                        </div>
-                    </div>
-                </div>
+        <section className="py-24 relative overflow-hidden">
+            {/* Background Gradient */}
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-blue-900/10 pointer-events-none"></div>
 
-                <div className="space-y-6 order-1 md:order-2 w-full md:w-1/2">
-                    <div className="w-fit text-xs rounded-full px-2.5 py-1 glass-morphism text-primary-200 flex items-center gap-x-2">
-                        <Rocket size={12} />
-                        Mission
-                    </div>
-                    <h2 className="font-semibold text-primary-50 text-3xl xl:text-5xl leading-120% tracking-tighter">
-                        Redefining Value Accrual for the Digital Age
-                    </h2>
-                    <p className="leading-relaxed text-primary-100/90 text-base xl:text-lg">
-                        We're building a robust autonomous protocol that delivers consistent returns and capital preservation. Named after "quintessence"—the purest form of capital efficiency and engineered financial stability.
-                    </p>
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="max-w-4xl mx-auto text-center">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="w-16 h-16 mx-auto bg-blue-500/20 rounded-full flex items-center justify-center mb-8"
+                    >
+                        <Target className="text-blue-400 w-8 h-8" />
+                    </motion.div>
+
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                        className="text-4xl md:text-5xl font-bold text-white mb-8"
+                    >
+                        Redefining Value Accrual for the Digital Age.
+                    </motion.h2>
+
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                        className="text-xl text-primary-100/80 leading-relaxed"
+                    >
+                        Quintes addresses a significant market demand for reliable, efficient, and sustainable yield solutions. Our commitment is to create a robust autonomous protocol that delivers consistent returns and capital preservation. We are architecting a new standard for trustworthy, yield-bearing digital assets, providing a secure platform where holders can generate competitive, non-dilutive yield.
+                    </motion.p>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

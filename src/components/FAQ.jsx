@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MessageCircleQuestion, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const FAQItem = ({ question, answer, isOpen, onClick }) => {
     return (
@@ -18,13 +19,21 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
                     />
                 </button>
             </h3>
-            <div
-                className={`overflow-hidden text-sm transition-all duration-200 ease-out ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
-            >
-                <div className="pb-4 pt-0 text-white/50">
-                    <p>{answer}</p>
-                </div>
-            </div>
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.4, ease: "easeInOut" }} // Slightly smoother expansion
+                        className="overflow-hidden text-sm"
+                    >
+                        <div className="pb-4 pt-0 text-white/50">
+                            <p>{answer}</p>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </div>
     );
 };
@@ -43,7 +52,7 @@ const FAQ = () => {
         },
         {
             question: "How does QNT achieve its consistent growth?",
-            answer: "QNT is a synthetic token tied to a target price that is programmed to rise steadily, aiming for significant annual growth. This is supported by profits from deploying user collateral into proven, market-neutral hedging strategies that increase the collateral's value. Automated \'PegKeepers\' and arbitrage ensure the market price stays aligned with this appreciating target."
+            answer: "QNT is a synthetic token tied to a target price that is programmed to rise steadily, aiming for significant annual growth. This is supported by profits from deploying user collateral into proven, market-neutral hedging strategies that increase the collateral's value. Automated 'PegKeepers' and arbitrage ensure the market price stays aligned with this appreciating target."
         },
         {
             question: "Is my deposited collateral always safe?",
@@ -60,19 +69,38 @@ const FAQ = () => {
     ];
 
     return (
-        <div className="py-24 md:py-48">
-            <div className="container mx-auto px-8 space-y-8 flex flex-col items-center">
+        <section className="py-24 md:py-48">
+            <div className="container mx-auto px-4 space-y-8 flex flex-col items-center">
                 <div className="space-y-6 flex flex-col items-center">
-                    <div className="w-fit text-xs rounded-full px-2.5 py-1 glass-morphism text-primary-200 flex items-center gap-x-2">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, ease: "easeOut" }}
+                        className="w-fit text-xs rounded-full px-2.5 py-1 glass-morphism text-primary-200 flex items-center gap-x-2"
+                    >
                         <MessageCircleQuestion size={12} />
                         Questions?
-                    </div>
-                    <h2 className="font-semibold text-primary-50 text-3xl xl:text-5xl leading-120% tracking-tighter max-w-2xl text-center">
+                    </motion.div>
+
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                        className="font-semibold text-primary-50 text-3xl xl:text-5xl leading-120% tracking-tighter max-w-2xl text-center"
+                    >
                         Your Quintes Queries, Answered
-                    </h2>
+                    </motion.h2>
                 </div>
 
-                <div className="w-full lg:w-[800px] animate-in fade-in-0 slide-in-from-bottom-8 duration-1000">
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                    className="w-full lg:w-[800px]"
+                >
                     <div className="px-0 md:px-8 w-full border-t border-[#3e3e3e]">
                         {faqs.map((faq, index) => (
                             <FAQItem
@@ -84,9 +112,9 @@ const FAQ = () => {
                             />
                         ))}
                     </div>
-                </div>
+                </motion.div>
             </div>
-        </div>
+        </section>
     );
 };
 
