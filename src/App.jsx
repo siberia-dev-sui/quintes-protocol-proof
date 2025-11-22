@@ -8,6 +8,7 @@ import QTSToken from './components/QTSToken';
 import Security from './components/Security';
 import Contributors from './components/Contributors';
 import Roadmap from './components/Roadmap';
+import Articles from './components/Articles'; // Added import
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 
@@ -25,6 +26,7 @@ function App() {
                 <Contributors />
                 <Roadmap />
                 <FAQ />
+                <Articles /> {/* Added component */}
                 <Footer />
             </main>
         </div>

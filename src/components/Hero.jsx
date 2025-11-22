@@ -1,19 +1,35 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div className="relative w-full min-h-screen flex flex-col items-center justify-center">
+        <div className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden">
             <div className="container mx-auto px-8 z-10 relative flex flex-col items-center max-w-[1100px] gap-y-10 md:gap-y-12 py-24 md:py-32">
                 <div className="flex flex-col items-center gap-y-6">
-                    <h1 className="text-primary-50 text-4xl sm:text-5xl lg:text-6xl text-center font-semibold font-sans tracking-tight leading-[110%] max-w-4xl animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 fill-mode-forwards">
-                        Safely Scale Your Crypto By 33% Yearly Using Automated Proof of Collateral
-                    </h1>
-                    <p className="leading-relaxed text-primary-100/90 text-base sm:text-lg text-center max-w-2xl animate-in fade-in-0 slide-in-from-bottom-4 duration-1000 delay-200 fill-mode-forwards">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        className="text-primary-50 text-3xl sm:text-4xl lg:text-5xl text-center font-medium font-sans tracking-tight leading-[115%] max-w-4xl"
+                    >
+                        Safely Scale Your Crypto By <span className="text-blue-400 drop-shadow-[0_0_15px_rgba(96,165,250,0.5)] font-semibold">33%</span> Yearly Using Automated Proof of Collateral
+                    </motion.h1>
+                    <motion.p
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1.5, delay: 0.3, ease: "easeOut" }}
+                        className="leading-relaxed text-primary-100/80 text-base sm:text-lg text-center max-w-2xl"
+                    >
                         Deposit BTC, ETH, or stablecoins to mint QNT—our yield-bearing stable asset engineered for consistent value growth through patented crypto-economic mechanisms.
-                    </p>
+                    </motion.p>
                 </div>
 
-                <button className="group relative w-max cursor-pointer outline-none text-sm sm:text-base animate-in fade-in-0 zoom-in-95 duration-1000 delay-500 fill-mode-forwards">
+                <motion.button
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1, delay: 0.5, ease: "easeOut" }}
+                    className="group relative w-max cursor-pointer outline-none text-sm sm:text-base"
+                >
                     <div className="move-on-path h-8 w-12 translate-y-1/3 rounded-full bg-primary-400/40 blur-lg transition-colors group-hover:bg-primary-300/40"></div>
                     <div className="relative w-max overflow-hidden rounded-full bg-primary-900/40 p-0.5">
                         <div className="move-on-path h-16 w-24 rounded-full bg-primary-500 blur-lg transition-colors group-hover:bg-primary-400"></div>
@@ -21,7 +37,7 @@ const Hero = () => {
                             Start Growing Your Crypto
                         </div>
                     </div>
-                </button>
+                </motion.button>
             </div>
 
             {/* Background extends beyond Hero */}

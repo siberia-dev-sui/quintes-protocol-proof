@@ -3,25 +3,21 @@ import React from 'react';
 import { ArrowRight, ShieldCheck, TrendingUp, Wallet, RefreshCw, BarChart3, Lock, Zap, Activity } from 'lucide-react';
 import { motion } from 'framer-motion';
 import ParticleBackground from './ParticleBackground';
+import GrowthChart from './GrowthChart';
 
 const Strategy = () => {
     return (
-        <section className="min-h-screen flex flex-col justify-center relative overflow-hidden py-20 bg-background">
+        <section className="min-h-screen flex flex-col justify-center relative overflow-hidden py-24 bg-background">
             {/* Background - Deep & Clean */}
             <div className="absolute inset-0">
-                {/* Custom Particle System - Base Layer */}
                 <ParticleBackground />
-
-                {/* Gradient Overlay - Adjusted for visibility */}
                 <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black via-blue-950/5 to-black opacity-90 pointer-events-none"></div>
-
-                {/* Subtle Grid */}
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 pointer-events-none"></div>
             </div>
 
-            <div className="container mx-auto px-4 relative z-10">
-                {/* Header - Understated & Professional */}
-                <div className="text-center mb-20">
+            <div className="container mx-auto px-6 lg:px-12 relative z-10">
+                {/* Header */}
+                <div className="text-center mb-16">
                     <motion.div
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -30,136 +26,139 @@ const Strategy = () => {
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-primary-200 mb-6 tracking-widest uppercase"
                     >
                         <Activity size={12} className="text-blue-400" />
-                        The Mechanism
+                        The Quintes Engine
                     </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                        className="text-3xl md:text-5xl font-medium text-white tracking-tight mb-4"
+                        className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-6"
                     >
-                        Delta-Neutral Architecture
+                        Your Assets, Amplified. <br />
+                        <span className="text-white/60">A Simple Way to Grow Your Crypto.</span>
                     </motion.h2>
                     <motion.p
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                        className="text-base md:text-lg text-primary-100/60 max-w-xl mx-auto font-light"
+                        className="text-lg text-primary-100/70 max-w-3xl mx-auto leading-relaxed"
                     >
-                        A systematic approach to yield generation, prioritizing capital preservation and consistent returns through automated hedging.
+                        Quintes is a platform that turns your USDC, BTC, or ETH deposits into QNT, a token designed to grow at a steady rate (targeting up to 33% annually), like a reliable, high-yield savings plan. Your deposits are safely backed by extra collateral, ensuring you can trade QNT or cash it out for your original assets anytime.
                     </motion.p>
                 </div>
 
-                {/* Flow of Funds Diagram */}
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid lg:grid-cols-3 gap-0 items-center relative">
+                {/* Two Key Questions Grid */}
+                <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
+                    {/* Question 1: Consistent Growth */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                        className="glass-morphism p-8 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-colors"
+                    >
+                        <div className="mb-6 p-3 rounded-lg bg-blue-500/10 w-fit">
+                            <TrendingUp className="w-6 h-6 text-blue-400" />
+                        </div>
+                        <h3 className="text-xl font-bold text-white mb-4">How does QNT grow at such a consistent rate?</h3>
+                        <ul className="space-y-4 text-primary-100/70 text-sm leading-relaxed">
+                            <li className="flex gap-3">
+                                <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
+                                <span>
+                                    <strong className="text-white">Engineered Growth:</strong> QNT is a synthetic token tied to a target price that is programmed to rise steadily (e.g., by 0.253% every three days).
+                                </span>
+                            </li>
+                            <li className="flex gap-3">
+                                <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
+                                <span>
+                                    <strong className="text-white">Collateral at Work:</strong> A portion of your deposited collateral is deployed into sophisticated, Shariah-compliant hedging strategies designed to generate 30-45% in profits.
+                                </span>
+                            </li>
+                            <li className="flex gap-3">
+                                <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
+                                <span>
+                                    <strong className="text-white">Automated Peg Stability:</strong> Automated PegKeepers and arbitrage opportunities ensure QNT's market price stays aligned with its rising target price.
+                                </span>
+                            </li>
+                        </ul>
+                    </motion.div>
 
-                        {/* Connecting Line (Background) */}
-                        <div className="hidden lg:block absolute top-1/2 left-10 right-10 h-[1px] bg-white/10 -translate-y-1/2 z-0"></div>
-
-                        {/* Step 1: Input */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-                            className="relative z-10 flex flex-col items-center text-center group"
-                        >
-                            <div className="w-full max-w-xs bg-black/40 backdrop-blur-md border border-white/10 p-8 rounded-xl hover:border-white/20 transition-colors duration-500">
-                                <div className="flex justify-center gap-4 mb-6 opacity-80">
-                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/80 font-bold text-sm border border-white/10">₿</div>
-                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/80 font-bold text-sm border border-white/10">Ξ</div>
-                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/80 font-bold text-sm border border-white/10">$</div>
-                                </div>
-                                <h3 className="text-lg font-medium text-white mb-2">Capital Injection</h3>
-                                <p className="text-sm text-primary-100/50 font-mono">BTC • ETH • Stablecoins</p>
-                            </div>
-                            <div className="hidden lg:block absolute -right-6 top-1/2 -translate-y-1/2 text-white/20">
-                                <ArrowRight size={16} />
-                            </div>
-                        </motion.div>
-
-                        {/* Step 2: Process (The Engine) */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-                            className="relative z-10 flex flex-col items-center text-center"
-                        >
-                            <div className="w-full max-w-sm bg-gradient-to-b from-blue-950/20 to-black/40 backdrop-blur-md border border-blue-500/20 p-10 rounded-2xl shadow-[0_0_40px_-10px_rgba(59,130,246,0.1)]">
-                                <div className="w-16 h-16 mx-auto rounded-full bg-blue-500/10 flex items-center justify-center mb-6 border border-blue-500/20">
-                                    <RefreshCw size={24} className="text-blue-400" />
-                                </div>
-                                <h3 className="text-xl font-medium text-white mb-2">The Engine</h3>
-                                <p className="text-sm text-blue-200/60 mb-6 font-mono">Delta-Neutral Strategy</p>
-
-                                <div className="space-y-3 text-left">
-                                    <div className="flex items-center gap-3 text-xs text-primary-100/70 p-3 rounded-lg bg-white/5 border border-white/5">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-green-400"></div>
-                                        <span>Long Spot Assets</span>
-                                    </div>
-                                    <div className="flex items-center gap-3 text-xs text-primary-100/70 p-3 rounded-lg bg-white/5 border border-white/5">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-red-400"></div>
-                                        <span>Short Perp Futures</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="hidden lg:block absolute -right-6 top-1/2 -translate-y-1/2 text-white/20">
-                                <ArrowRight size={16} />
-                            </div>
-                        </motion.div>
-
-                        {/* Step 3: Output */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8, delay: 0.7, ease: "easeOut" }}
-                            className="relative z-10 flex flex-col items-center text-center"
-                        >
-                            <div className="w-full max-w-xs bg-black/40 backdrop-blur-md border border-teal-500/20 p-8 rounded-xl hover:border-teal-500/30 transition-colors duration-500">
-                                <div className="w-12 h-12 mx-auto rounded-lg bg-teal-500/10 flex items-center justify-center mb-6 text-teal-400 border border-teal-500/20">
-                                    <TrendingUp size={24} />
-                                </div>
-                                <h3 className="text-lg font-medium text-white mb-2">Sustainable Yield</h3>
-                                <p className="text-sm text-primary-100/50 font-mono">QNT Appreciation</p>
-                                <div className="mt-6 pt-6 border-t border-white/5 flex justify-between items-center text-xs">
-                                    <span className="text-primary-100/40">Target APY</span>
-                                    <span className="text-teal-400 font-mono">15% - 25%</span>
-                                </div>
-                            </div>
-                        </motion.div>
-
-                    </div>
+                    {/* Question 2: Collateral Backing */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                        className="glass-morphism p-8 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-colors"
+                    >
+                        <div className="mb-6 p-3 rounded-lg bg-emerald-500/10 w-fit">
+                            <ShieldCheck className="w-6 h-6 text-emerald-400" />
+                        </div>
+                        <h3 className="text-xl font-bold text-white mb-4">How is QNT always backed by collateral?</h3>
+                        <ul className="space-y-4 text-primary-100/70 text-sm leading-relaxed">
+                            <li className="flex gap-3">
+                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0" />
+                                <span>
+                                    <strong className="text-white">2:1 Backing Ratio:</strong> For every $1 of QNT in existence, Quintes is designed to maintain at least $2 of collateral.
+                                </span>
+                            </li>
+                            <li className="flex gap-3">
+                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0" />
+                                <span>
+                                    <strong className="text-white">Over-collateralization:</strong> When you deposit $100 to mint $100 of QNT, our strategies work to grow that collateral's value towards the 200% ratio.
+                                </span>
+                            </li>
+                            <li className="flex gap-3">
+                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0" />
+                                <span>
+                                    <strong className="text-white">Safety Nets:</strong> Automated partial liquidations restore ratios if values drop, while the Reserve Pool and QTS Treasury act as final backstops.
+                                </span>
+                            </li>
+                        </ul>
+                    </motion.div>
                 </div>
 
-                {/* Footer / Trust Indicators */}
+                {/* Growth Chart Section */}
                 <motion.div
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 1, delay: 1 }}
-                    className="mt-24 flex flex-wrap justify-center gap-8 md:gap-16 opacity-40 grayscale hover:grayscale-0 transition-all duration-700"
+                    transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+                    className="max-w-5xl mx-auto"
                 >
-                    {/* Placeholder for Audit/Partner Logos - kept minimal */}
-                    <div className="flex items-center gap-2 text-sm font-mono text-white/60">
-                        <ShieldCheck size={14} />
-                        <span>AUDITED CONTRACTS</span>
+                    <div className="text-center mb-8">
+                        <h3 className="text-2xl font-semibold text-white mb-2">Proven Performance</h3>
+                        <p className="text-primary-100/60 text-sm">Historical simulation of QNT growth vs Major Assets</p>
                     </div>
-                    <div className="flex items-center gap-2 text-sm font-mono text-white/60">
-                        <Lock size={14} />
-                        <span>24/7 MONITORING</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-sm font-mono text-white/60">
-                        <BarChart3 size={14} />
-                        <span>ON-CHAIN TRANSPARENCY</span>
-                    </div>
+                    <GrowthChart />
                 </motion.div>
-
             </div>
+
+            {/* Footer / Trust Indicators */}
+            <motion.div
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1, delay: 1 }}
+                className="mt-24 flex flex-wrap justify-center gap-8 md:gap-16 opacity-40 grayscale hover:grayscale-0 transition-all duration-700"
+            >
+                {/* Placeholder for Audit/Partner Logos - kept minimal */}
+                <div className="flex items-center gap-2 text-sm font-mono text-white/60">
+                    <ShieldCheck size={14} />
+                    <span>AUDITED CONTRACTS</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm font-mono text-white/60">
+                    <Lock size={14} />
+                    <span>24/7 MONITORING</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm font-mono text-white/60">
+                    <BarChart3 size={14} />
+                    <span>ON-CHAIN TRANSPARENCY</span>
+                </div>
+            </motion.div>
+
         </section>
     );
 };

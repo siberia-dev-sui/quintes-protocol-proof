@@ -39,7 +39,7 @@ const FAQItem = ({ question, answer, isOpen, onClick }) => {
 };
 
 const FAQ = () => {
-    const [openIndex, setOpenIndex] = useState(0);
+    const [openIndex, setOpenIndex] = useState(null);
 
     const faqs = [
         {
@@ -52,7 +52,7 @@ const FAQ = () => {
         },
         {
             question: "How does QNT achieve its consistent growth?",
-            answer: "QNT is a synthetic token tied to a target price that is programmed to rise steadily, aiming for significant annual growth. This is supported by profits from deploying user collateral into proven, market-neutral hedging strategies that increase the collateral's value. Automated 'PegKeepers' and arbitrage ensure the market price stays aligned with this appreciating target."
+            answer: "QNT is a synthetic token tied to a target price that is programmed to rise steadily, aiming for significant annual growth. This is supported by profits from deploying user collateral into proven, market-neutral hedging strategies that increase the collateral's value. Automated \"PegKeepers\" and arbitrage ensure the market price stays aligned with this appreciating target."
         },
         {
             question: "Is my deposited collateral always safe?",
