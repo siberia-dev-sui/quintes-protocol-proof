@@ -5,22 +5,22 @@ import { motion } from 'framer-motion';
 const About = () => {
     const pillars = [
         {
-            icon: <Shield className="w-8 h-8 text-blue-400" />,
+            icon: <Shield className="w-4 h-4 text-white/60" />,
             title: "Automated Proof of Collateral",
             description: "Collateral value is programmed to always equal or exceed minted QNT."
         },
         {
-            icon: <Zap className="w-8 h-8 text-teal-400" />,
+            icon: <Zap className="w-4 h-4 text-white/60" />,
             title: "Engineered for Growth",
             description: "Patented system designed for stable, predictable value growth."
         },
         {
-            icon: <Leaf className="w-8 h-8 text-emerald-400" />,
+            icon: <Leaf className="w-4 h-4 text-white/60" />,
             title: "Sustainable Yield Source",
             description: "Real revenue generated from proven, market-neutral trading strategies."
         },
         {
-            icon: <Scale className="w-8 h-8 text-purple-400" />,
+            icon: <Scale className="w-4 h-4 text-white/60" />,
             title: "Fairness & Transparency",
             description: "Aligning incentives to benefit all protocol participants."
         }
@@ -69,7 +69,7 @@ const About = () => {
                             transition={{ duration: 0.8, delay: 0.2 + (index * 0.15), ease: "easeOut" }}
                             className="glass-morphism p-8 rounded-2xl border border-white/5 hover:border-white/10 transition-colors group"
                         >
-                            <div className="mb-6 p-4 rounded-xl bg-white/5 w-fit group-hover:scale-110 transition-transform duration-300">
+                            <div className="mb-4 p-3 rounded-lg bg-white/5 w-fit group-hover:scale-105 transition-transform duration-300">
                                 {pillar.icon}
                             </div>
                             <h3 className="text-xl font-semibold text-white mb-3">{pillar.title}</h3>
