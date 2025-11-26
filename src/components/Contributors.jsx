@@ -15,7 +15,7 @@ const Contributors = () => {
     ];
 
     return (
-        <section className="py-24 md:py-48 relative">
+        <section id="contributors" className="py-24 relative overflow-hidden">
             {/* Gradient Overlay */}
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
             <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>

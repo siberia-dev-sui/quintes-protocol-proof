@@ -4,6 +4,14 @@ import { Menu, X } from 'lucide-react';
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+    const scrollToSection = (sectionId) => {
+        const id = sectionId.toLowerCase();
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    };
+
     return (
         <div className="container mx-auto px-8 absolute w-full left-1/2 -translate-x-1/2 border-b h-20 flex items-center justify-between z-50 transition-colors duration-150 bg-transparent border-transparent">
             <div className="flex items-center gap-x-3 animate-in fade-in-0 duration-500">
@@ -12,11 +20,14 @@ const Navbar = () => {
             </div>
 
             <div className="gap-x-4 items-center hidden md:flex absolute left-1/2 -translate-x-1/2">
-                {['Home', 'About', 'Mission', 'Strategy', 'Contributors', 'FAQ'].map((item, index) => (
+                {['Home', 'About', 'Strategy', 'Contributors', 'FAQ'].map((item, index) => (
                     <div key={item} className="animate-in fade-in-0 slide-in-from-bottom-2 duration-700" style={{ animationDelay: `${index * 100}ms` }}>
-                        <p className="text-primary-100/85 text-sm font-sans tracking-tight cursor-pointer hover:text-white transition-colors">
+                        <button
+                            onClick={() => scrollToSection(item)}
+                            className="text-primary-100/85 text-sm font-sans tracking-tight cursor-pointer hover:text-white transition-colors bg-transparent border-none outline-none"
+                        >
                             {item}
-                        </p>
+                        </button>
                     </div>
                 ))}
             </div>

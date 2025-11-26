@@ -27,7 +27,7 @@ const About = () => {
     ];
 
     return (
-        <section className="min-h-screen flex items-center justify-center py-20 bg-background relative">
+        <section id="about" className="min-h-screen flex items-center justify-center py-20 bg-background relative">
             <div className="container mx-auto px-6 lg:px-12">
                 <div className="grid lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
                     {/* Left Side - Text Content */}
@@ -48,27 +48,37 @@ const About = () => {
                             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                             className="text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight"
                         >
-                            The S&P of Web3. <br />
-                            <span className="text-white/90">But Safer, Smarter, and Collateralized.</span>
+                            Redefining Value Accrual <br />
+                            <span className="text-white/90">for the Digital Age.</span>
                         </motion.h2>
-                        <motion.p
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-                            className="text-base text-primary-100/70 leading-relaxed max-w-xl"
+                            className="space-y-4"
                         >
-                            Quintes Protocol is a next-generation financial infrastructure built to solve the core failures of DeFi and traditional finance: volatility, unsound incentives, and inaccessible yield. We provide a sophisticated yet simple platform for you to securely stake your BTC, ETH, and stablecoins and earn superior, sustainable returns.
-                        </motion.p>
-                        <motion.p
+                            <p className="text-base text-primary-100/70 leading-relaxed max-w-xl">
+                                Quintes Protocol is a next-generation financial infrastructure built to solve the core failures of DeFi and traditional finance: volatility, unsound incentives, and inaccessible yield.
+                            </p>
+                            <p className="text-base text-primary-100/70 leading-relaxed max-w-xl">
+                                We provide a sophisticated yet simple platform for you to securely stake your BTC, ETH, and stablecoins and earn superior, sustainable returns.
+                            </p>
+                        </motion.div>
+                        <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
-                            className="text-base text-primary-100/70 leading-relaxed max-w-xl"
+                            className="space-y-4"
                         >
-                            Our primary asset, QNT, is always fully backed and overcollateralized (minimum 200%) by a diversified pool of high-quality digital assets. This makes QNT redeemable at any time. We leverage patented crypto-economic mechanisms and deploy capital through proven, Shariah-compliant strategies via institutional-grade infrastructure, ensuring both stability and consistent long-term value accrual.
-                        </motion.p>
+                            <p className="text-base text-primary-100/70 leading-relaxed max-w-xl">
+                                Our primary asset, QNT, is always fully backed and overcollateralized (minimum 200%) by a diversified pool of high-quality digital assets, making it redeemable at any time.
+                            </p>
+                            <p className="text-base text-primary-100/70 leading-relaxed max-w-xl">
+                                We leverage patented crypto-economic mechanisms and deploy capital through proven, Shariah-compliant strategies via institutional-grade infrastructure, ensuring both stability and consistent long-term value accrual.
+                            </p>
+                        </motion.div>
                     </div>
 
                     {/* Right Side - Cards Grid 2x2 */}

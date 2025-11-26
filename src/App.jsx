@@ -19,7 +19,7 @@ function App() {
                 <Navbar />
                 <Hero />
                 <About />
-                <Mission />
+                {/* Mission section removed as per feedback (redundant) */}
                 <Strategy />
                 <QTSToken />
                 <Security />

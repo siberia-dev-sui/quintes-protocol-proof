@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
     return (
-        <div className="relative w-full min-h-screen flex flex-col items-center justify-center overflow-hidden">
+        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
             <div className="container mx-auto px-8 z-10 relative flex flex-col items-center max-w-[1100px] gap-y-10 md:gap-y-12 py-24 md:py-32">
                 <div className="flex flex-col items-center gap-y-6">
                     <motion.h1
@@ -55,7 +55,7 @@ const Hero = () => {
                     src="/hero-bg.png"
                 />
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -7,7 +7,7 @@ import GrowthChart from './GrowthChart';
 
 const Strategy = () => {
     return (
-        <section className="min-h-screen flex flex-col justify-center relative overflow-hidden py-24 bg-background">
+        <section id="strategy" className="min-h-screen flex flex-col justify-center relative overflow-hidden py-24 bg-background">
             {/* Background - Deep & Clean */}
             <div className="absolute inset-0">
                 <ParticleBackground />
@@ -49,9 +49,9 @@ const Strategy = () => {
                     </motion.p>
                 </div>
 
-                {/* Two Key Questions Grid */}
+                {/* Two Ways to Earn Grid */}
                 <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-16">
-                    {/* Question 1: Consistent Growth */}
+                    {/* Way 1: Hold QNT */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -62,30 +62,25 @@ const Strategy = () => {
                         <div className="mb-6 p-3 rounded-lg bg-blue-500/10 w-fit">
                             <TrendingUp className="w-6 h-6 text-blue-400" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-4">How does QNT grow at such a consistent rate?</h3>
+                        <h3 className="text-xl font-bold text-white mb-2">1. Hold QNT</h3>
+                        <p className="text-sm text-blue-300 mb-4 font-medium">Target: ~33% APY (Stable Growth)</p>
                         <ul className="space-y-4 text-primary-100/70 text-sm leading-relaxed">
                             <li className="flex gap-3">
                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
                                 <span>
-                                    <strong className="text-white">Engineered Growth:</strong> QNT is a synthetic token tied to a target price that is programmed to rise steadily (e.g., by 0.253% every three days).
+                                    <strong className="text-white">Engineered Appreciation:</strong> Simply hold QNT in your wallet. It is programmed to rise in value steadily (e.g., ~0.253% every three days) against the dollar.
                                 </span>
                             </li>
                             <li className="flex gap-3">
                                 <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
                                 <span>
-                                    <strong className="text-white">Collateral at Work:</strong> A portion of your deposited collateral is deployed into sophisticated, Shariah-compliant hedging strategies designed to generate 30-45% in profits.
-                                </span>
-                            </li>
-                            <li className="flex gap-3">
-                                <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
-                                <span>
-                                    <strong className="text-white">Automated Peg Stability:</strong> Automated PegKeepers and arbitrage opportunities ensure QNT's market price stays aligned with its rising target price.
+                                    <strong className="text-white">No Lock-ups:</strong> Unlike staking, you don't need to lock your tokens. You retain full liquidity and can sell or transfer QNT at any time.
                                 </span>
                             </li>
                         </ul>
                     </motion.div>
 
-                    {/* Question 2: Collateral Backing */}
+                    {/* Way 2: Stake Collateral (HFT) */}
                     <motion.div
                         initial={{ opacity: 0, x: 20 }}
                         whileInView={{ opacity: 1, x: 0 }}
@@ -94,26 +89,21 @@ const Strategy = () => {
                         className="glass-morphism p-8 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-colors"
                     >
                         <div className="mb-6 p-3 rounded-lg bg-emerald-500/10 w-fit">
-                            <ShieldCheck className="w-6 h-6 text-emerald-400" />
+                            <Zap className="w-6 h-6 text-emerald-400" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-4">How is QNT always backed by collateral?</h3>
+                        <h3 className="text-xl font-bold text-white mb-2">2. Stake Collateral (HFT)</h3>
+                        <p className="text-sm text-emerald-300 mb-4 font-medium">Target: High Yield from Trading</p>
                         <ul className="space-y-4 text-primary-100/70 text-sm leading-relaxed">
                             <li className="flex gap-3">
                                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0" />
                                 <span>
-                                    <strong className="text-white">2:1 Backing Ratio:</strong> For every $1 of QNT in existence, Quintes is designed to maintain at least $2 of collateral.
+                                    <strong className="text-white">High-Frequency Trading:</strong> Deposit collateral (BTC/ETH) to participate in our institutional-grade HFT strategies.
                                 </span>
                             </li>
                             <li className="flex gap-3">
                                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0" />
                                 <span>
-                                    <strong className="text-white">Over-collateralization:</strong> When you deposit $100 to mint $100 of QNT, our strategies work to grow that collateral's value towards the 200% ratio.
-                                </span>
-                            </li>
-                            <li className="flex gap-3">
-                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0" />
-                                <span>
-                                    <strong className="text-white">Safety Nets:</strong> Automated partial liquidations restore ratios if values drop, while the Reserve Pool and QTS Treasury act as final backstops.
+                                    <strong className="text-white">Real Yield:</strong> Earn rewards generated from actual market-neutral trading profits (30-45% historical performance), not inflationary token emissions.
                                 </span>
                             </li>
                         </ul>

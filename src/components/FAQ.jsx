@@ -69,7 +69,7 @@ const FAQ = () => {
     ];
 
     return (
-        <section className="py-24 md:py-48">
+        <section id="faq" className="py-24 relative overflow-hidden">
             <div className="container mx-auto px-4 space-y-8 flex flex-col items-center">
                 <div className="space-y-6 flex flex-col items-center">
                     <motion.div
