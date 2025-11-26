@@ -7,11 +7,11 @@ import GrowthChart from './GrowthChart';
 
 const Strategy = () => {
     return (
-        <section id="strategy" className="min-h-screen flex flex-col justify-center relative overflow-hidden py-24 bg-background">
+        <section id="strategy" className="min-h-screen flex flex-col justify-center relative overflow-hidden py-24">
             {/* Background - Deep & Clean */}
             <div className="absolute inset-0">
                 <ParticleBackground />
-                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black via-blue-950/5 to-black opacity-90 pointer-events-none"></div>
+                <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-blue-950/5 to-transparent opacity-90 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 pointer-events-none"></div>
             </div>
 
@@ -25,7 +25,7 @@ const Strategy = () => {
                         transition={{ duration: 0.8, ease: "easeOut" }}
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-primary-200 mb-6 tracking-widest uppercase"
                     >
-                        <Activity size={12} className="text-blue-400" />
+                        <Activity size={12} className="text-white" />
                         The Quintes Engine
                     </motion.div>
                     <motion.h2
@@ -59,20 +59,20 @@ const Strategy = () => {
                         transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                         className="glass-morphism p-8 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-colors"
                     >
-                        <div className="mb-6 p-3 rounded-lg bg-blue-500/10 w-fit">
-                            <TrendingUp className="w-6 h-6 text-blue-400" />
+                        <div className="mb-6 p-3 rounded-lg bg-white/10 w-fit">
+                            <TrendingUp className="w-6 h-6 text-white" />
                         </div>
                         <h3 className="text-xl font-bold text-white mb-2">1. Hold QNT</h3>
-                        <p className="text-sm text-blue-300 mb-4 font-medium">Target: ~33% APY (Stable Growth)</p>
+                        <p className="text-sm text-white/60 mb-4 font-medium">Target: ~33% APY (Stable Growth)</p>
                         <ul className="space-y-4 text-primary-100/70 text-sm leading-relaxed">
                             <li className="flex gap-3">
-                                <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
+                                <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 shrink-0" />
                                 <span>
                                     <strong className="text-white">Engineered Appreciation:</strong> Simply hold QNT in your wallet. It is programmed to rise in value steadily (e.g., ~0.253% every three days) against the dollar.
                                 </span>
                             </li>
                             <li className="flex gap-3">
-                                <div className="w-1.5 h-1.5 rounded-full bg-blue-400 mt-2 shrink-0" />
+                                <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 shrink-0" />
                                 <span>
                                     <strong className="text-white">No Lock-ups:</strong> Unlike staking, you don't need to lock your tokens. You retain full liquidity and can sell or transfer QNT at any time.
                                 </span>
@@ -88,14 +88,14 @@ const Strategy = () => {
                         transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
                         className="glass-morphism p-8 rounded-2xl border border-white/5 bg-white/5 hover:bg-white/10 transition-colors"
                     >
-                        <div className="mb-6 p-3 rounded-lg bg-emerald-500/10 w-fit">
-                            <Zap className="w-6 h-6 text-emerald-400" />
+                        <div className="mb-6 p-3 rounded-lg bg-white/10 w-fit">
+                            <Zap className="w-6 h-6 text-white" />
                         </div>
                         <h3 className="text-xl font-bold text-white mb-2">2. Stake Collateral (HFT)</h3>
-                        <p className="text-sm text-emerald-300 mb-4 font-medium">Target: High Yield from Trading</p>
+                        <p className="text-sm text-white/60 mb-4 font-medium">Target: High Yield from Trading</p>
                         <ul className="space-y-4 text-primary-100/70 text-sm leading-relaxed">
                             <li className="flex gap-3">
-                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-400 mt-2 shrink-0" />
+                                <div className="w-1.5 h-1.5 rounded-full bg-white/60 mt-2 shrink-0" />
                                 <span>
                                     <strong className="text-white">High-Frequency Trading:</strong> Deposit collateral (BTC/ETH) to participate in our institutional-grade HFT strategies.
                                 </span>
